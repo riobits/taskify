@@ -1,0 +1,77 @@
+header {
+  margin: 5rem auto;
+  max-width: 920px;
+  text-align: center;
+}
+
+header h1 {
+  font-weight: normal;
+  font-size: 2.5rem;
+}
+
+header p {
+  margin: 1rem auto;
+  max-width: 440px;
+}
+
+.button {
+  display: inline-block;
+  margin: 0.5rem;
+  padding: 0.5rem 1.5rem;
+  max-width: 140px;
+  width: 100%;
+  border-radius: 0.25rem;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.start-button {
+  background-color: var(--green);
+  color: var(--white);
+  border: 2px solid var(--green);
+}
+
+.start-button:hover {
+  background-color: var(--dark-green);
+  border-color: var(--dark-green);
+}
+
+.about-button {
+  color: var(--green);
+  border: 2px solid var(--green);
+}
+
+.about-button:hover {
+  background-color: var(--dark-green);
+  color: var(--white);
+  border-color: var(--dark-green);
+}
+
+.features-section h1 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: normal;
+}
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 1rem auto;
+  max-width: 920px;
+}
+
+@media (max-width: 768px) {
+  header {
+    margin: 2rem auto;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  header p {
+    margin: 1rem auto;
+    max-width: 440px;
+  }
+}

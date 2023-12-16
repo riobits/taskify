@@ -1,0 +1,19 @@
+.dashboard {
+  margin-top: 1rem;
+}
+
+.add-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--green);
+  color: var(--white);
+  text-decoration: none;
+  padding: 0.5rem 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.note {
+  margin-top: 0.5rem;
+  color: #666;
+}

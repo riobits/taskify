@@ -1,0 +1,37 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.links {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.links li {
+  margin-left: 2rem;
+}
+
+.links a {
+  text-decoration: none;
+  color: #000;
+  transition: color 0.2s ease-in-out;
+}
+
+.links a:hover {
+  color: var(--green);
+}
+
+.logo-wrapper {
+  max-width: 120px;
+}
+
+.logo-wrapper img {
+  width: 100%;
+}

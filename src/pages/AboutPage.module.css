@@ -1,0 +1,9 @@
+.about {
+  max-width: 1080px;
+  padding: 1rem;
+  margin: 0 auto;
+}
+
+.about h2 {
+  margin-top: 2rem;
+}
