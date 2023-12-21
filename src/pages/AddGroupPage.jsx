@@ -34,6 +34,7 @@ const AddGroupPage = () => {
           id='name'
           placeholder='Enter group name'
           onChange={handleNameChange}
+          autoFocus
         />
         <p className={styles.error}>{error}</p>
         <button type='submit'>Add Group</button>
