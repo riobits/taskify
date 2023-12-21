@@ -51,7 +51,7 @@ const Group = ({ group, editedGroup, setGroups, setEditedGroup }) => {
       <Link to={`/dashboard/group/${group.id}`}>
         {editedGroup !== group.id && <h2>{group.name}</h2>}
         <p>{group.description}</p>
-        <p>Last Update: {moment(group.createdAt).fromNow()}</p>
+        <p>Last Update: {moment(group.updatedAt).fromNow()}</p>
       </Link>
     </div>
   )
