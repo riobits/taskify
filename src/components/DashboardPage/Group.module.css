@@ -1,0 +1,31 @@
+.group {
+  display: block;
+  background-color: #fff;
+  max-width: 300px;
+  width: 100%;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.group-icons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.group-icons svg {
+  cursor: pointer;
+  margin-left: 0.5rem;
+}
+
+.group a {
+  color: var(--black);
+  text-decoration: none;
+}
+
+.group:hover {
+  transform: scale(1.05);
+}
