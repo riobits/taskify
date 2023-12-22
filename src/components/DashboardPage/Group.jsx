@@ -50,7 +50,7 @@ const Group = ({
 
 Group.propTypes = {
   group: PropTypes.object.isRequired,
-  editedGroup: PropTypes.string.isRequired,
+  editedGroup: PropTypes.number,
   handleEditGroup: PropTypes.func.isRequired,
   handleEditGroupCancel: PropTypes.func.isRequired,
   handleEditGroupSubmit: PropTypes.func.isRequired,
