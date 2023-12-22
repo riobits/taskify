@@ -1,42 +1,55 @@
 import { useState } from 'react'
 import { useParams } from 'react-router-dom'
-import EmojiPicker from 'emoji-picker-react'
-import { SmilePlus } from 'lucide-react'
-import { getTasks } from '../utils/storage'
+import { getTasks, addTask, editTask, deleteTask } from '../utils/storage'
+import NoTasks from '../assets/no-tasks.svg'
+import AddTask from '../components/GroupTasksPage/AddTask'
+import Task from '../components/GroupTasksPage/Task'
 import styles from './GroupTasksPage.module.css'
 
 const GroupTasksPage = () => {
-  const params = useParams()
-  const [tasks, setTasks] = useState(getTasks(params.groupId))
-  const [isEmojiPickerVisible, setIsEmojiPickerVisible] = useState(false)
+  const { groupId } = useParams()
+  const [tasks, setTasks] = useState(getTasks(+groupId))
 
-  const handleToggleEmojiPicker = () => {
-    setIsEmojiPickerVisible((prev) => !prev)
+  const handleAddTask = (emoji, name) => {
+    addTask(+groupId, emoji, name)
+    setTasks(getTasks(+groupId))
+  }
+
+  const handleEditTask = (taskId, name, emoji, isCompleted) => {
+    editTask(+groupId, +taskId, name, emoji, isCompleted)
+    setTasks(getTasks(+groupId))
+  }
+
+  const handleDeleteTask = (taskId) => {
+    deleteTask(+groupId, +taskId)
+    setTasks(getTasks(+groupId))
   }
 
   return (
     <div>
-      <div className={styles['new-task']}>
-        <div>
-          <button
-            className={styles['emoji-button']}
-            onClick={handleToggleEmojiPicker}
-          >
-            <SmilePlus size={18} />
-          </button>
-          <div className={styles['emoji-picker-container']}>
-            {isEmojiPickerVisible && <EmojiPicker />}
-          </div>
+      <AddTask handleAddTask={handleAddTask} />
+      {tasks.length === 0 && (
+        <div className={styles['no-tasks']}>
+          <h2>No tasks yet! Let&apos;s add some.</h2>
+          <img src={NoTasks} alt='Empty' />
         </div>
-        <input
-          placeholder='Insert a new task...'
-          className={styles['new-task-input']}
-        />
-      </div>
-      <p className={styles.note}>Press Enter to insert.</p>
-      {/* {tasks.map((task) => {
-        return <div key={task.name}>{task.name}</div>
-      })} */}
+      )}
+      {!!tasks.length && (
+        <div className={styles.tasks}>
+          <p>Your tasks:</p>
+          {tasks.map((task) => (
+            <Task
+              key={task.id}
+              id={task.id}
+              emoji={task.emoji}
+              name={task.name}
+              completed={task.completed}
+              handleEditTask={handleEditTask}
+              handleDeleteTask={handleDeleteTask}
+            />
+          ))}
+        </div>
+      )}
     </div>
   )
 }

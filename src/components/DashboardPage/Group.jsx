@@ -36,6 +36,7 @@ const Group = ({
             onFocus={handleFocus}
             className={styles.input}
           />
+          <p className={styles.note}>Press Enter to save changes.</p>
         </form>
       )}
       <Link to={`/dashboard/group/${group.id}`}>

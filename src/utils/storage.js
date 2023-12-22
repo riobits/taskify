@@ -53,7 +53,7 @@ export function getTasks(groupId) {
   return group ? group.tasks : []
 }
 
-export function addTask(groupId, taskName) {
+export function addTask(groupId, emoji, taskName) {
   const oldGroups = localStorage.getItem('groups')
   const groups = oldGroups ? JSON.parse(oldGroups) : []
 
@@ -66,6 +66,7 @@ export function addTask(groupId, taskName) {
           ...group.tasks,
           {
             id: Date.now(),
+            emoji,
             name: taskName,
             completed: false,
           },
@@ -96,7 +97,7 @@ export function deleteTask(groupId, taskId) {
   localStorage.setItem('groups', JSON.stringify(newGroups))
 }
 
-export function editTask(groupId, taskId, name) {
+export function editTask(groupId, taskId, emoji, name, completed) {
   const oldGroups = localStorage.getItem('groups')
   const groups = oldGroups ? JSON.parse(oldGroups) : []
 
@@ -109,7 +110,9 @@ export function editTask(groupId, taskId, name) {
           if (task.id === taskId) {
             return {
               ...task,
+              emoji,
               name,
+              completed,
             }
           }
           return task

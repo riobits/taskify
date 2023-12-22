@@ -43,3 +43,8 @@
 .group:hover {
   transform: scale(1.05);
 }
+
+.note {
+  font-size: 0.8rem;
+  color: #666;
+}
