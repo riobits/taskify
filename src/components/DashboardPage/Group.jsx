@@ -1,34 +1,19 @@
 import { Link } from 'react-router-dom'
 import { Pen, Trash, X } from 'lucide-react'
-import { deleteGroup, editGroupName, getGroups } from '../../utils/storage'
 import PropTypes from 'prop-types'
 import moment from 'moment'
 
 import styles from './Group.module.css'
 
-const Group = ({ group, editedGroup, setGroups, setEditedGroup }) => {
-  const handleEditGroup = (id) => {
-    setEditedGroup(id)
-  }
-
-  const handleEditGroupCancel = () => {
-    setEditedGroup(null)
-  }
-
+const Group = ({
+  group,
+  editedGroup,
+  handleEditGroup,
+  handleEditGroupCancel,
+  handleEditGroupSubmit,
+  handleDeleteGroup,
+}) => {
   const handleFocus = (event) => event.target.select()
-
-  const handleEditGroupSubmit = (event) => {
-    event.preventDefault()
-    const newName = event.target[0].value
-    editGroupName(editedGroup, newName)
-    setGroups(getGroups())
-    setEditedGroup(null)
-  }
-
-  const handleDeleteGroup = (id) => {
-    deleteGroup(id)
-    setGroups(getGroups())
-  }
 
   return (
     <div className={styles.group}>
@@ -60,9 +45,10 @@ const Group = ({ group, editedGroup, setGroups, setEditedGroup }) => {
 Group.propTypes = {
   group: PropTypes.object.isRequired,
   editedGroup: PropTypes.string.isRequired,
-  setGroups: PropTypes.func.isRequired,
-  setEditedGroup: PropTypes.func.isRequired,
-  editGroupName: PropTypes.func.isRequired,
+  handleEditGroup: PropTypes.func.isRequired,
+  handleEditGroupCancel: PropTypes.func.isRequired,
+  handleEditGroupSubmit: PropTypes.func.isRequired,
+  handleDeleteGroup: PropTypes.func.isRequired,
 }
 
 export default Group
