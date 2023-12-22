@@ -1,0 +1,38 @@
+.new-task {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+}
+
+.new-task-input {
+  display: block;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  margin: 0.5rem 0;
+  max-width: 300px;
+  width: 100%;
+}
+
+.new-task-input:focus {
+  outline: none;
+  border-color: var(--green);
+}
+
+.emoji-button {
+  cursor: pointer;
+  padding: 0.4rem;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  margin-right: 0.2rem;
+}
+
+.note {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.emoji-picker-container {
+  position: absolute;
+}
