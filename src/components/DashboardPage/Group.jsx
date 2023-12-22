@@ -30,7 +30,12 @@ const Group = ({
       )}
       {editedGroup && editedGroup === group.id && (
         <form onSubmit={handleEditGroupSubmit}>
-          <input defaultValue={group.name} autoFocus onFocus={handleFocus} />
+          <input
+            defaultValue={group.name}
+            autoFocus
+            onFocus={handleFocus}
+            className={styles.input}
+          />
         </form>
       )}
       <Link to={`/dashboard/group/${group.id}`}>

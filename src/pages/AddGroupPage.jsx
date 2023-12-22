@@ -27,17 +27,22 @@ const AddGroupPage = () => {
     <div>
       <h1>Add Tasks Group</h1>
       <form onSubmit={handleSubmit}>
-        <label htmlFor='name'>Group Name</label>
+        <label htmlFor='name' className={styles.label}>
+          Group Name
+        </label>
         <input
           type='text'
           value={groupName}
           id='name'
           placeholder='Enter group name'
           onChange={handleNameChange}
+          className={styles.input}
           autoFocus
         />
         <p className={styles.error}>{error}</p>
-        <button type='submit'>Add Group</button>
+        <button type='submit' className={styles.button}>
+          Add Group
+        </button>
       </form>
     </div>
   )
