@@ -19,7 +19,7 @@ const AddGroup = () => {
   return (
     <form onSubmit={handleAddGroup}>
       <input
-        placeholder="Insert a new task..."
+        placeholder="Insert a new group..."
         value={groupName}
         onChange={handleGroupNameChange}
         autoFocus
