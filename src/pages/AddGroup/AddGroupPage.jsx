@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { addGroup } from '../utils/storage'
+import { addGroup } from '../../utils/storage'
 import styles from './AddGroupPage.module.css'
 
 import './AddGroupPage.module.css'
@@ -27,20 +27,20 @@ const AddGroupPage = () => {
     <div>
       <h1>Add Tasks Group</h1>
       <form onSubmit={handleSubmit}>
-        <label htmlFor='name' className={styles.label}>
+        <label htmlFor="name" className={styles.label}>
           Group Name
         </label>
         <input
-          type='text'
+          type="text"
           value={groupName}
-          id='name'
-          placeholder='Enter group name'
+          id="name"
+          placeholder="Enter group name"
           onChange={handleNameChange}
           className={styles.input}
           autoFocus
         />
         <p className={styles.error}>{error}</p>
-        <button type='submit' className={styles.button}>
+        <button type="submit" className={styles.button}>
           Add Group
         </button>
       </form>

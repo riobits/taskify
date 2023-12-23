@@ -69,7 +69,7 @@ const Task = ({
         </div>
         {showEmojiPicker && (
           <div className={styles['emoji-picker-container']}>
-            <EmojiPicker emojiStyle='native' onEmojiClick={handleEmojiClick} />
+            <EmojiPicker emojiStyle="native" onEmojiClick={handleEmojiClick} />
           </div>
         )}
         {!showNameInput && (
@@ -80,7 +80,7 @@ const Task = ({
         {showNameInput && (
           <form onSubmit={handleSubmit}>
             <input
-              type='text'
+              type="text"
               id={id}
               value={newName}
               onChange={handleNameChange}
@@ -99,7 +99,7 @@ const Task = ({
           <Pen size={18} />
         </button>
         <input
-          type='checkbox'
+          type="checkbox"
           id={id}
           checked={completed}
           disabled={preview}

@@ -6,16 +6,16 @@ const Navbar = () => {
   return (
     <nav>
       <div className={styles['logo-wrapper']}>
-        <Link to='/'>
-          <img src={Logo} alt='Logo' />
+        <Link to="/">
+          <img src={Logo} alt="Logo" />
         </Link>
       </div>
       <ul className={styles.links}>
         <li>
-          <Link to='/dashboard'>Dashboard</Link>
+          <Link to="/dashboard">Dashboard</Link>
         </li>
         <li>
-          <Link to='/about'>About us</Link>
+          <Link to="/about">About us</Link>
         </li>
       </ul>
     </nav>

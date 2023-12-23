@@ -1,13 +1,13 @@
 import { Link } from 'react-router-dom'
 import { Plus } from 'lucide-react'
-import Groups from '../components/DashboardPage/Groups'
+import Groups from '../../components/Groups/Groups'
 import styles from './DashboardPage.module.css'
 
 const DashboardPage = () => {
   return (
     <>
       <div className={styles.dashboard}>
-        <Link to='/dashboard/addgroup' className={styles['add-btn']}>
+        <Link to="/dashboard/addgroup" className={styles['add-btn']}>
           <Plus />
           Add Group
         </Link>

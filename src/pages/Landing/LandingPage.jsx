@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { Laugh, Pencil, Shield } from 'lucide-react'
-import Feature from '../components/LandingPage/Feature'
+import Feature from '../../components/Feature/Feature'
 import styles from './LandingPage.module.css'
 
 const LandingPage = () => {
@@ -32,13 +32,13 @@ const LandingPage = () => {
         </p>
         <div>
           <Link
-            to='/dashboard'
+            to="/dashboard"
             className={`${styles.button} ${styles['start-button']}`}
           >
             Get Started
           </Link>
           <Link
-            to='/about'
+            to="/about"
             className={`${styles.button} ${styles['about-button']}`}
           >
             About us

@@ -1,11 +1,11 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Layout from './components/Layout/Layout'
 import DashboardLayout from './components/Layout/DashboardLayout'
-import LandingPage from './pages/LandingPage'
-import AboutPage from './pages/AboutPage'
-import DashboardPage from './pages/DashboardPage'
-import AddGroupPage from './pages/AddGroupPage'
-import TasksPage from './pages/TasksPage'
+import LandingPage from './pages/Landing/LandingPage'
+import AboutPage from './pages/About/AboutPage'
+import DashboardPage from './pages/Dashboard/DashboardPage'
+import AddGroupPage from './pages/AddGroup/AddGroupPage'
+import TasksPage from './pages/Tasks/TasksPage'
 
 const App = () => {
   const router = createBrowserRouter([
