@@ -55,6 +55,7 @@ const AddTask = ({ handleAddTask }) => {
         </div>
         <input
           placeholder="Insert a new task..."
+          autoFocus
           value={name}
           onChange={handleNameChange}
           onKeyDown={enterHandler}
