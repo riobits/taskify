@@ -5,7 +5,7 @@ import LandingPage from './pages/LandingPage'
 import AboutPage from './pages/AboutPage'
 import DashboardPage from './pages/DashboardPage'
 import AddGroupPage from './pages/AddGroupPage'
-import GroupTasksPage from './pages/GroupTasksPage'
+import TasksPage from './pages/TasksPage'
 
 const App = () => {
   const router = createBrowserRouter([
@@ -26,7 +26,7 @@ const App = () => {
       children: [
         { path: '/dashboard', element: <DashboardPage /> },
         { path: '/dashboard/addgroup', element: <AddGroupPage /> },
-        { path: '/dashboard/group/:groupId', element: <GroupTasksPage /> },
+        { path: '/dashboard/group/:groupId', element: <TasksPage /> },
       ],
     },
   ])

@@ -2,11 +2,11 @@ import { useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { getTasks, addTask, editTask, deleteTask } from '../utils/storage'
 import NoTasks from '../assets/no-tasks.svg'
-import AddTask from '../components/GroupTasksPage/AddTask'
-import Task from '../components/GroupTasksPage/Task'
-import styles from './GroupTasksPage.module.css'
+import AddTask from '../components/TasksPage/AddTask'
+import Task from '../components/TasksPage/Task'
+import styles from './TasksPage.module.css'
 
-const GroupTasksPage = () => {
+const TasksPage = () => {
   const { groupId } = useParams()
   const [tasks, setTasks] = useState(getTasks(+groupId))
 
@@ -54,4 +54,4 @@ const GroupTasksPage = () => {
   )
 }
 
-export default GroupTasksPage
+export default TasksPage
