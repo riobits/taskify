@@ -4,7 +4,6 @@ import DashboardLayout from './components/Layout/DashboardLayout'
 import LandingPage from './pages/Landing/LandingPage'
 import AboutPage from './pages/About/AboutPage'
 import DashboardPage from './pages/Dashboard/DashboardPage'
-import AddGroupPage from './pages/AddGroup/AddGroupPage'
 import TasksPage from './pages/Tasks/TasksPage'
 
 const App = () => {
@@ -25,7 +24,6 @@ const App = () => {
       element: <DashboardLayout />,
       children: [
         { path: '/dashboard', element: <DashboardPage /> },
-        { path: '/dashboard/addgroup', element: <AddGroupPage /> },
         { path: '/dashboard/group/:groupId', element: <TasksPage /> },
       ],
     },
