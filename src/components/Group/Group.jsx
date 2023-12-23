@@ -1,47 +1,59 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Pen, Trash, X } from 'lucide-react'
 import PropTypes from 'prop-types'
 import moment from 'moment'
-
 import styles from './Group.module.css'
+import { deleteGroup, editGroupName, getGroups } from '../../utils/storage'
 
-const Group = ({
-  group,
-  editedGroup,
-  handleEditGroup,
-  handleEditGroupCancel,
-  handleEditGroupSubmit,
-  handleDeleteGroup,
-}) => {
+const Group = ({ group, setGroups }) => {
+  const [isEditing, setIsEditing] = useState(false)
+
   const handleFocus = (event) => event.target.select()
+
+  const handleEditGroup = () => {
+    setIsEditing(!isEditing)
+  }
+
+  const handleEditGroupSubmit = (event) => {
+    event.preventDefault()
+    const newName = event.target[0].value
+    editGroupName(group.id, newName)
+    setGroups(getGroups())
+    setIsEditing(false)
+  }
+
+  const handleDeleteGroup = (id) => {
+    deleteGroup(id)
+    setGroups(getGroups())
+  }
 
   return (
     <div className={styles.group}>
-      {editedGroup !== group.id && (
+      {!isEditing && (
         <div className={styles['group-icons']}>
-          <Pen size={20} onClick={() => handleEditGroup(group.id)} />
+          <Pen size={20} onClick={handleEditGroup} />
           <Trash size={20} onClick={() => handleDeleteGroup(group.id)} />
         </div>
       )}
-      {editedGroup && editedGroup === group.id && (
-        <div className={styles['group-icons']}>
-          <X size={20} onClick={handleEditGroupCancel} />
-        </div>
-      )}
-      {editedGroup && editedGroup === group.id && (
-        <form onSubmit={handleEditGroupSubmit}>
-          <input
-            defaultValue={group.name}
-            autoFocus
-            onFocus={handleFocus}
-            className={styles.input}
-          />
-          <p className={styles.note}>Press Enter to save changes.</p>
-        </form>
+      {isEditing && (
+        <>
+          <div className={styles['group-icons']}>
+            <X size={20} onClick={handleEditGroup} />
+          </div>
+          <form onSubmit={handleEditGroupSubmit}>
+            <input
+              defaultValue={group.name}
+              autoFocus
+              onFocus={handleFocus}
+              className={styles.input}
+            />
+            <p className={styles.note}>Press Enter to save changes.</p>
+          </form>
+        </>
       )}
       <Link to={`/dashboard/group/${group.id}`}>
-        {editedGroup !== group.id && <h2>{group.name}</h2>}
-        <p>{group.description}</p>
+        {!isEditing && <h2>{group.name}</h2>}
         <p>Last Update: {moment(group.updatedAt).fromNow()}</p>
       </Link>
     </div>
@@ -50,11 +62,7 @@ const Group = ({
 
 Group.propTypes = {
   group: PropTypes.object.isRequired,
-  editedGroup: PropTypes.number,
-  handleEditGroup: PropTypes.func.isRequired,
-  handleEditGroupCancel: PropTypes.func.isRequired,
-  handleEditGroupSubmit: PropTypes.func.isRequired,
-  handleDeleteGroup: PropTypes.func.isRequired,
+  setGroups: PropTypes.func.isRequired,
 }
 
 export default Group
