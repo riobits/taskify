@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { Laugh, Pencil, Shield } from 'lucide-react'
 import Feature from '../../components/Feature/Feature'
 import styles from './LandingPage.module.css'
+import GroupsPreviewImage from '../../assets/groups-preview.png'
 
 const LandingPage = () => {
   const features = [
@@ -56,6 +57,18 @@ const LandingPage = () => {
               icon={feature.icon}
             />
           ))}
+        </div>
+      </section>
+      <section className={styles['groups-section']}>
+        <div className={styles['groups-content']}>
+          <h1>Add Task Groups</h1>
+          <p>
+            Organize your tasks by adding groups. You can add as many groups as
+            you want!
+          </p>
+        </div>
+        <div className={styles['groups-preview']}>
+          <img src={GroupsPreviewImage} alt="Add Tasks Groups" />
         </div>
       </section>
     </>
