@@ -1,5 +1,6 @@
 import { Outlet } from 'react-router-dom'
 import DashboardNavbar from './DashboardNavbar'
+import Footer from './Footer'
 
 const DashboardLayout = () => {
   return (
@@ -13,6 +14,7 @@ const DashboardLayout = () => {
         }}
       >
         <Outlet />
+        <Footer />
       </div>
     </>
   )

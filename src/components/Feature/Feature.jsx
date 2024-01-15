@@ -5,7 +5,7 @@ const Feature = ({ title, description, icon }) => {
   return (
     <div className={styles.feature}>
       {icon}
-      <h2>{title}</h2>
+      <h3>{title}</h3>
       <p>{description}</p>
     </div>
   )

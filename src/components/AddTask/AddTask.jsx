@@ -2,7 +2,7 @@ import { useState } from 'react'
 import PropTypes from 'prop-types'
 import EmojiPicker from 'emoji-picker-react'
 import { SmilePlus } from 'lucide-react'
-import Task from './Task'
+import Task from '../Task/Task'
 import styles from './AddTask.module.css'
 
 const AddTask = ({ handleAddTask }) => {
@@ -38,7 +38,7 @@ const AddTask = ({ handleAddTask }) => {
       <div className={styles['new-task']}>
         <div className={styles['emoji-input-container']}>
           <button
-            type='button'
+            type="button"
             onClick={handleToggleEmojiPicker}
             className={styles['emoji-button']}
           >
@@ -47,14 +47,15 @@ const AddTask = ({ handleAddTask }) => {
           <div className={styles['emoji-picker-container']}>
             {isEmojiPickerVisible && (
               <EmojiPicker
-                emojiStyle='native'
+                emojiStyle="native"
                 onEmojiClick={handleEmojiClick}
               />
             )}
           </div>
         </div>
         <input
-          placeholder='Insert a new task...'
+          placeholder="Insert a new task..."
+          autoFocus
           value={name}
           onChange={handleNameChange}
           onKeyDown={enterHandler}

@@ -1,11 +1,10 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Layout from './components/Layout/Layout'
 import DashboardLayout from './components/Layout/DashboardLayout'
-import LandingPage from './pages/LandingPage'
-import AboutPage from './pages/AboutPage'
-import DashboardPage from './pages/DashboardPage'
-import AddGroupPage from './pages/AddGroupPage'
-import GroupTasksPage from './pages/GroupTasksPage'
+import LandingPage from './pages/Landing/LandingPage'
+import AboutPage from './pages/About/AboutPage'
+import DashboardPage from './pages/Dashboard/DashboardPage'
+import TasksPage from './pages/Tasks/TasksPage'
 
 const App = () => {
   const router = createBrowserRouter([
@@ -25,8 +24,7 @@ const App = () => {
       element: <DashboardLayout />,
       children: [
         { path: '/dashboard', element: <DashboardPage /> },
-        { path: '/dashboard/addgroup', element: <AddGroupPage /> },
-        { path: '/dashboard/group/:groupId', element: <GroupTasksPage /> },
+        { path: '/dashboard/group/:groupId', element: <TasksPage /> },
       ],
     },
   ])

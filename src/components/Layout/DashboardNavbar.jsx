@@ -5,8 +5,8 @@ import styles from './DashboardNavbar.module.css'
 const DashboardNavbar = () => {
   return (
     <div className={styles.logo}>
-      <Link to='/'>
-        <img src={Logo} alt='Logo' />
+      <Link to="/dashboard">
+        <img src={Logo} alt="Logo" />
       </Link>
     </div>
   )
