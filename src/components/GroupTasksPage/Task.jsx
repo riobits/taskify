@@ -50,15 +50,11 @@ const Task = ({
     setShowNameInput(true)
   }
 
-  const handleNameSave = () => {
+  const handleNameSave = (e) => {
+    e.preventDefault()
     if (preview) return
     handleEditTask(id, emoji, newName, completed)
     setShowNameInput(false)
-  }
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    handleNameSave()
   }
 
   return (
@@ -78,7 +74,7 @@ const Task = ({
           </label>
         )}
         {showNameInput && (
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleNameSave}>
             <input
               type='text'
               id={id}
