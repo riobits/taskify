@@ -3,6 +3,7 @@ import { Laugh, Pencil, Shield } from 'lucide-react'
 import Feature from '../../components/Feature/Feature'
 import styles from './LandingPage.module.css'
 import GroupsPreviewImage from '../../assets/groups-preview.png'
+import { TypeAnimation } from 'react-type-animation'
 
 const LandingPage = () => {
   const features = [
@@ -26,7 +27,25 @@ const LandingPage = () => {
   return (
     <>
       <header>
-        <h1>Stay Organized, Get Things Done!</h1>
+        <TypeAnimation
+          sequence={[
+            'Stay Organized with Taskify',
+            1000,
+            'Stay Organized, Get Things Done!',
+            1000,
+            'Create and Organize Your To-Do List',
+            1000,
+            'Prioritize Your Daily Responsibilities',
+            1000,
+            'Achieve Productivity Milestones with Taskify',
+            1000,
+          ]}
+          wrapper="h1"
+          speed={50}
+          style={{ fontSize: '2.5rem', fontWeight: 'normal' }}
+          repeat={Infinity}
+        />
+
         <p>
           Maximize productivity effortlessly with our intuitive to-do app. Join
           us and stay organized!
