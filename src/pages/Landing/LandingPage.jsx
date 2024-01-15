@@ -4,6 +4,7 @@ import Feature from '../../components/Feature/Feature'
 import styles from './LandingPage.module.css'
 import GroupsPreviewImage from '../../assets/groups-preview.png'
 import { TypeAnimation } from 'react-type-animation'
+import { motion } from 'framer-motion'
 
 const LandingPage = () => {
   const features = [
@@ -46,10 +47,18 @@ const LandingPage = () => {
           repeat={Infinity}
         />
 
-        <p>
+        <motion.p
+          initial="hidden"
+          animate="visible"
+          variants={{
+            hidden: { opacity: 0, y: 30 },
+            visible: { opacity: 1, y: 0 },
+          }}
+          transition={{ duration: 0.3 }}
+        >
           Maximize productivity effortlessly with our intuitive to-do app. Join
           us and stay organized!
-        </p>
+        </motion.p>
         <div>
           <Link
             to="/dashboard"
@@ -68,13 +77,23 @@ const LandingPage = () => {
       <section className={styles['features-section']}>
         <h1>Features</h1>
         <div className={styles.features}>
-          {features.map((feature) => (
-            <Feature
+          {features.map((feature, i) => (
+            <motion.div
               key={feature.title}
-              title={feature.title}
-              description={feature.description}
-              icon={feature.icon}
-            />
+              initial="hidden"
+              animate="visible"
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              transition={{ duration: 0.3, delay: i * 0.1 }}
+            >
+              <Feature
+                title={feature.title}
+                description={feature.description}
+                icon={feature.icon}
+              />
+            </motion.div>
           ))}
         </div>
       </section>

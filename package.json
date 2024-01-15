@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "emoji-picker-react": "^4.5.16",
+    "framer-motion": "^10.18.0",
     "lucide-react": "^0.298.0",
     "moment": "^2.29.4",
     "prop-types": "^15.8.1",
