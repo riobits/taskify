@@ -3,6 +3,7 @@ import { Laugh, Pencil, Shield } from 'lucide-react'
 import Feature from '../../components/Feature/Feature'
 import styles from './LandingPage.module.css'
 import GroupsPreviewImage from '../../assets/groups-preview.png'
+import TasksPreviewImage from '../../assets/tasks-preview.png'
 import { TypeAnimation } from 'react-type-animation'
 import { motion } from 'framer-motion'
 
@@ -101,12 +102,53 @@ const LandingPage = () => {
         <div className={styles['groups-content']}>
           <h1>Add Task Groups</h1>
           <p>
-            Organize your tasks by adding groups. You can add as many groups as
-            you want!
+            Organize your tasks effectively by creating task groups. Task groups
+            are a fantastic way to categorize and streamline your to-do list,
+            providing a structured overview of your responsibilities.
+          </p>
+
+          <p>
+            Once you&apos;ve added a group, you can easily assign tasks to it.
+            This helps you maintain a clear distinction between different areas
+            of your life or projects, making it simpler to focus on specific
+            goals or priorities.
+          </p>
+
+          <p>
+            Ready to enhance your task management experience? Click below to
+            start creating task groups and elevate your organization game!
           </p>
         </div>
+
         <div className={styles['groups-preview']}>
           <img src={GroupsPreviewImage} alt="Add Tasks Groups" />
+        </div>
+      </section>
+      <section className={styles['tasks-section']}>
+        <div className={styles['tasks-content']}>
+          <h1>Add Task Groups</h1>
+          <p>
+            Welcome to our efficient and user-friendly todo list landing page!
+            Adding a task is a breeze, helping you stay organized and focused.{' '}
+          </p>
+          <p>
+            To add a new task, click on the &quot;Add&quot; button or press the{' '}
+            <kbd>enter</kbd> key. This action will create a new task entry field
+            for you.
+          </p>
+          <p>
+            Edit or Delete (If Needed): Should you need to make changes or
+            remove a task, hover over the task and use the edit or delete
+            options. This provides flexibility in managing your todo list.
+          </p>
+          <p>
+            With your task successfully added, you&apos;re all set to enjoy an
+            organized and efficient todo list. Stay productive and on top of
+            your priorities!
+          </p>
+        </div>
+        <div className={styles['tasks-preview']}>
+          <img src={TasksPreviewImage} alt="Add Tasks" />
         </div>
       </section>
     </>

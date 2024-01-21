@@ -57,29 +57,43 @@ header p {
   max-width: 920px;
 }
 
-.groups-section {
+.groups-section,
+.tasks-section {
   display: flex;
   justify-content: space-around;
   margin: 5rem auto;
   max-width: 1080px;
 }
 
-.groups-content {
+.tasks-section {
+  flex-direction: row-reverse;
+}
+
+.groups-content,
+.tasks-content {
   margin-bottom: 2rem;
 }
 
-.groups-content p {
+.groups-content p,
+.tasks-content p {
   max-width: 500px;
+  margin: 1rem auto;
 }
 
-.groups-preview {
+.groups-preview,
+.tasks-preview {
   max-width: 500px;
   width: 100%;
   transform: rotate3d(1, 1, 1, 10deg);
   animation: float 3s ease-in-out infinite;
 }
 
-.groups-preview img {
+.tasks-preview {
+  max-width: 300px;
+}
+
+.groups-preview img,
+.tasks-preview img {
   width: 100%;
 }
 
