@@ -1,18 +1,22 @@
 # Taskify
 
-Requirements
+This is a simple project for my university.
+
+![Website Preview](./screenshots/screenshot_1.png)
+
+**Requirements**
 
 ```
-Nodejs v18.18.2
+Nodejs v18
 ```
 
-Installation
+**Installation**
 
 ```
 npm install
 ```
 
-Preview / dev
+**Preview / dev**
 
 ```
 npm run dev
