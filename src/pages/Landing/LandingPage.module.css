@@ -125,7 +125,8 @@ header p {
 }
 
 @media (max-width: 1080px) {
-  .groups-section {
+  .groups-section,
+  .tasks-section {
     flex-direction: column;
     align-items: center;
   }
